@@ -37,3 +37,12 @@ netflix_df = pd.read_csv("the_office_series.csv")
 
 # Print the first five rows of the DataFrame
 print(netflix_df.head(5))
+
+# Subset the DataFrame for type "Movie"
+netflix_df_movies_only = netflix_df[netflix_df['type'] == 'Movie']
+
+# Select only the columns of interest
+netflix_movies_col_subset = netflix_df_movies_only.filter(items= ['title', 'country', 'genre', 'release_year', 'duration'])
+
+# Print the first five rows of the new DataFrame
+print(netflix_movies_col_subset[5])
